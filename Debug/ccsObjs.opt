@@ -1,0 +1,1 @@
+"./bluetooth.obj" "./display.obj" "./keypad.obj" "./main.obj" "./motor.obj" "./sensor.obj" "./tm4c123gh6pm_startup_ccs.obj" "./uartstdio.obj" "../tm4c123gh6pm.cmd" -llibc.a -l"C:/Program Files (x86)/TI/TivaWare/driverlib/ccs/Debug/driverlib.lib" 
