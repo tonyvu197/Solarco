@@ -12,6 +12,7 @@ keypad.obj: C:/Program\ Files\ (x86)/TI/ccsv7/tools/compiler/ti-cgt-arm_16.9.7.L
 keypad.obj: C:/Program\ Files\ (x86)/TI/ccsv7/tools/compiler/ti-cgt-arm_16.9.7.LTS/include/stdlib.h
 keypad.obj: C:/Program\ Files\ (x86)/TI/ccsv7/tools/compiler/ti-cgt-arm_16.9.7.LTS/include/stdbool.h
 keypad.obj: C:/Program\ Files\ (x86)/TI/ccsv7/tools/compiler/ti-cgt-arm_16.9.7.LTS/include/string.h
+keypad.obj: C:/Program\ Files\ (x86)/TI/ccsv7/tools/compiler/ti-cgt-arm_16.9.7.LTS/include/assert.h
 keypad.obj: C:/Program\ Files\ (x86)/TI/TivaWare/utils/uartstdio.h
 keypad.obj: C:/Program\ Files\ (x86)/TI/ccsv7/tools/compiler/ti-cgt-arm_16.9.7.LTS/include/stdarg.h
 keypad.obj: C:/Program\ Files\ (x86)/TI/TivaWare/inc/tm4c123gh6pm.h
@@ -21,6 +22,8 @@ keypad.obj: C:/Program\ Files\ (x86)/TI/TivaWare/inc/hw_sysctl.h
 keypad.obj: C:/Program\ Files\ (x86)/TI/TivaWare/inc/hw_types.h
 keypad.obj: C:/Program\ Files\ (x86)/TI/TivaWare/inc/hw_nvic.h
 keypad.obj: C:/Program\ Files\ (x86)/TI/TivaWare/inc/hw_ints.h
+keypad.obj: C:/Program\ Files\ (x86)/TI/TivaWare/inc/hw_timer.h
+keypad.obj: C:/Program\ Files\ (x86)/TI/TivaWare/inc/hw_uart.h
 keypad.obj: C:/Program\ Files\ (x86)/TI/TivaWare/driverlib/adc.h
 keypad.obj: C:/Program\ Files\ (x86)/TI/TivaWare/driverlib/gpio.h
 keypad.obj: C:/Program\ Files\ (x86)/TI/TivaWare/driverlib/sysctl.h
@@ -48,6 +51,7 @@ C:/Program\ Files\ (x86)/TI/ccsv7/tools/compiler/ti-cgt-arm_16.9.7.LTS/include/_
 C:/Program\ Files\ (x86)/TI/ccsv7/tools/compiler/ti-cgt-arm_16.9.7.LTS/include/stdlib.h: 
 C:/Program\ Files\ (x86)/TI/ccsv7/tools/compiler/ti-cgt-arm_16.9.7.LTS/include/stdbool.h: 
 C:/Program\ Files\ (x86)/TI/ccsv7/tools/compiler/ti-cgt-arm_16.9.7.LTS/include/string.h: 
+C:/Program\ Files\ (x86)/TI/ccsv7/tools/compiler/ti-cgt-arm_16.9.7.LTS/include/assert.h: 
 C:/Program\ Files\ (x86)/TI/TivaWare/utils/uartstdio.h: 
 C:/Program\ Files\ (x86)/TI/ccsv7/tools/compiler/ti-cgt-arm_16.9.7.LTS/include/stdarg.h: 
 C:/Program\ Files\ (x86)/TI/TivaWare/inc/tm4c123gh6pm.h: 
@@ -57,6 +61,8 @@ C:/Program\ Files\ (x86)/TI/TivaWare/inc/hw_sysctl.h:
 C:/Program\ Files\ (x86)/TI/TivaWare/inc/hw_types.h: 
 C:/Program\ Files\ (x86)/TI/TivaWare/inc/hw_nvic.h: 
 C:/Program\ Files\ (x86)/TI/TivaWare/inc/hw_ints.h: 
+C:/Program\ Files\ (x86)/TI/TivaWare/inc/hw_timer.h: 
+C:/Program\ Files\ (x86)/TI/TivaWare/inc/hw_uart.h: 
 C:/Program\ Files\ (x86)/TI/TivaWare/driverlib/adc.h: 
 C:/Program\ Files\ (x86)/TI/TivaWare/driverlib/gpio.h: 
 C:/Program\ Files\ (x86)/TI/TivaWare/driverlib/sysctl.h: 

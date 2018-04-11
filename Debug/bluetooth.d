@@ -12,6 +12,7 @@ bluetooth.obj: C:/Program\ Files\ (x86)/TI/ccsv7/tools/compiler/ti-cgt-arm_16.9.
 bluetooth.obj: C:/Program\ Files\ (x86)/TI/ccsv7/tools/compiler/ti-cgt-arm_16.9.7.LTS/include/stdlib.h
 bluetooth.obj: C:/Program\ Files\ (x86)/TI/ccsv7/tools/compiler/ti-cgt-arm_16.9.7.LTS/include/stdbool.h
 bluetooth.obj: C:/Program\ Files\ (x86)/TI/ccsv7/tools/compiler/ti-cgt-arm_16.9.7.LTS/include/string.h
+bluetooth.obj: C:/Program\ Files\ (x86)/TI/ccsv7/tools/compiler/ti-cgt-arm_16.9.7.LTS/include/assert.h
 bluetooth.obj: C:/Program\ Files\ (x86)/TI/TivaWare/utils/uartstdio.h
 bluetooth.obj: C:/Program\ Files\ (x86)/TI/ccsv7/tools/compiler/ti-cgt-arm_16.9.7.LTS/include/stdarg.h
 bluetooth.obj: C:/Program\ Files\ (x86)/TI/TivaWare/inc/tm4c123gh6pm.h
@@ -21,6 +22,8 @@ bluetooth.obj: C:/Program\ Files\ (x86)/TI/TivaWare/inc/hw_sysctl.h
 bluetooth.obj: C:/Program\ Files\ (x86)/TI/TivaWare/inc/hw_types.h
 bluetooth.obj: C:/Program\ Files\ (x86)/TI/TivaWare/inc/hw_nvic.h
 bluetooth.obj: C:/Program\ Files\ (x86)/TI/TivaWare/inc/hw_ints.h
+bluetooth.obj: C:/Program\ Files\ (x86)/TI/TivaWare/inc/hw_timer.h
+bluetooth.obj: C:/Program\ Files\ (x86)/TI/TivaWare/inc/hw_uart.h
 bluetooth.obj: C:/Program\ Files\ (x86)/TI/TivaWare/driverlib/adc.h
 bluetooth.obj: C:/Program\ Files\ (x86)/TI/TivaWare/driverlib/gpio.h
 bluetooth.obj: C:/Program\ Files\ (x86)/TI/TivaWare/driverlib/sysctl.h
@@ -48,6 +51,7 @@ C:/Program\ Files\ (x86)/TI/ccsv7/tools/compiler/ti-cgt-arm_16.9.7.LTS/include/_
 C:/Program\ Files\ (x86)/TI/ccsv7/tools/compiler/ti-cgt-arm_16.9.7.LTS/include/stdlib.h: 
 C:/Program\ Files\ (x86)/TI/ccsv7/tools/compiler/ti-cgt-arm_16.9.7.LTS/include/stdbool.h: 
 C:/Program\ Files\ (x86)/TI/ccsv7/tools/compiler/ti-cgt-arm_16.9.7.LTS/include/string.h: 
+C:/Program\ Files\ (x86)/TI/ccsv7/tools/compiler/ti-cgt-arm_16.9.7.LTS/include/assert.h: 
 C:/Program\ Files\ (x86)/TI/TivaWare/utils/uartstdio.h: 
 C:/Program\ Files\ (x86)/TI/ccsv7/tools/compiler/ti-cgt-arm_16.9.7.LTS/include/stdarg.h: 
 C:/Program\ Files\ (x86)/TI/TivaWare/inc/tm4c123gh6pm.h: 
@@ -57,6 +61,8 @@ C:/Program\ Files\ (x86)/TI/TivaWare/inc/hw_sysctl.h:
 C:/Program\ Files\ (x86)/TI/TivaWare/inc/hw_types.h: 
 C:/Program\ Files\ (x86)/TI/TivaWare/inc/hw_nvic.h: 
 C:/Program\ Files\ (x86)/TI/TivaWare/inc/hw_ints.h: 
+C:/Program\ Files\ (x86)/TI/TivaWare/inc/hw_timer.h: 
+C:/Program\ Files\ (x86)/TI/TivaWare/inc/hw_uart.h: 
 C:/Program\ Files\ (x86)/TI/TivaWare/driverlib/adc.h: 
 C:/Program\ Files\ (x86)/TI/TivaWare/driverlib/gpio.h: 
 C:/Program\ Files\ (x86)/TI/TivaWare/driverlib/sysctl.h: 

@@ -351,6 +351,7 @@ void teamRole() {
     }
 }
 
+
 void main() {
 
     //
@@ -395,7 +396,7 @@ void main() {
     initKeypad();
     initMotor();
     initSensor();
-    initBluetooth();
+    //initBluetooth();
 
     //
     // Enable processor interrupts

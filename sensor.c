@@ -1,9 +1,16 @@
 #include "sensor.h"
 
+char *dtostrf (double val, signed char width, unsigned char prec, char *sout) {
+  char fmt[20];
+  sprintf(fmt, "%%%d.%df", width, prec);
+  sprintf(sout, fmt, val);
+  return sout;
+}
+
 void readSensor() {
 
     uint32_t ulValue[1];
-    unsigned char string[100];
+    //unsigned char string[4];
 
     //
     // Trigger the ADC conversion.
@@ -28,9 +35,10 @@ void readSensor() {
     //
 
     ADCSequenceDataGet(SENSOR_BASE, 3, ulValue);
-    ltoa(ulValue[0], string);
-    printLCD(string);
-    /*
+    //ltoa(ulValue[0], string);
+    //printLCD(string);
+
+
     if (ulValue[0] < 512) {
         printCharLCD(0xFF);
         printCharLCD(7);
@@ -71,7 +79,7 @@ void readSensor() {
         printCharLCD(7);
         printCharLCD(7);
     }
-    else if (ulValue[0] >= 2048 && ulValue[0] < 2560 ) {
+    else if (ulValue[0] >= 2560 && ulValue[0] < 3076 ) {
         printCharLCD(0xFF);
         printCharLCD(0xFF);
         printCharLCD(0xFF);
@@ -81,7 +89,7 @@ void readSensor() {
         printCharLCD(7);
         printCharLCD(7);
     }
-    else if (ulValue[0] >= 2560 && ulValue[0] < 3072 ) {
+    else if (ulValue[0] >= 3076 && ulValue[0] < 3584 ) {
         printCharLCD(0xFF);
         printCharLCD(0xFF);
         printCharLCD(0xFF);
@@ -91,7 +99,7 @@ void readSensor() {
         printCharLCD(7);
         printCharLCD(7);
     }
-    else if (ulValue[0] >= 3072 && ulValue[0] < 3584 ) {
+    else if (ulValue[0] >= 3584 && ulValue[0] < 4096 ) {
         printCharLCD(0xFF);
         printCharLCD(0xFF);
         printCharLCD(0xFF);
@@ -111,7 +119,7 @@ void readSensor() {
         printCharLCD(0xFF);
         printCharLCD(0xFF);
     }
-    */
+
 }
 
 
@@ -123,8 +131,8 @@ void initSensor() {
     // TODO: change this to select the port/pin you are using.
     //
 
-    GPIOPinTypeGPIOInput(GPIO_PORTE_BASE, GPIO_PIN_3);
-    GPIOPadConfigSet(GPIO_PORTE_BASE, GPIO_PIN_3, GPIO_STRENGTH_2MA, GPIO_PIN_TYPE_STD_WPD);
+    //GPIOPinTypeGPIOInput(GPIO_PORTE_BASE, GPIO_PIN_3);
+    //GPIOPadConfigSet(GPIO_PORTE_BASE, GPIO_PIN_3, GPIO_STRENGTH_2MA, GPIO_PIN_TYPE_STD_WPD);
     GPIOPinTypeADC(GPIO_PORTE_BASE, GPIO_PIN_3);
     ADCSequenceConfigure(SENSOR_BASE, 3, ADC_TRIGGER_PROCESSOR, 0);
     ADCSequenceDisable(ADC0_BASE, 3);
@@ -138,15 +146,15 @@ void initSensor() {
     // 8 programmable steps. For more information on the
     // ADC sequences and steps, reference the datasheet.
     //
-
-    /*ADCSequenceStepConfigure(SENSOR_BASE, 0, 0, ADC_CTL_TS);
+    /*
+    ADCSequenceStepConfigure(SENSOR_BASE, 0, 0, ADC_CTL_TS);
     ADCSequenceStepConfigure(SENSOR_BASE, 0, 1, ADC_CTL_TS);
     ADCSequenceStepConfigure(SENSOR_BASE, 0, 2, ADC_CTL_TS);
     ADCSequenceStepConfigure(SENSOR_BASE, 0, 3, ADC_CTL_TS);
     ADCSequenceStepConfigure(SENSOR_BASE, 0, 4, ADC_CTL_TS);
     ADCSequenceStepConfigure(SENSOR_BASE, 0, 5, ADC_CTL_TS);
     ADCSequenceStepConfigure(SENSOR_BASE, 0, 6, ADC_CTL_TS);*/
-    ADCSequenceStepConfigure(SENSOR_BASE, 3, 0, ADC_CTL_TS | ADC_CTL_IE | ADC_CTL_END);
+    ADCSequenceStepConfigure(SENSOR_BASE, 3, 0, ADC_CTL_CH0 | ADC_CTL_IE | ADC_CTL_END);
 
     //
     // Since sample sequence 0 is now configured, it must be enabled.

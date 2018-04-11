@@ -6,6 +6,7 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include <string.h>
+#include <assert.h>
 #include "utils/uartstdio.h"
 #include "inc/tm4c123gh6pm.h"
 #include "inc/hw_memmap.h"
@@ -14,6 +15,8 @@
 #include "inc/hw_types.h"
 #include "inc/hw_nvic.h"
 #include "inc/hw_ints.h"
+#include "inc/hw_timer.h"
+#include "inc/hw_uart.h"
 #include "driverlib/adc.h"
 #include "driverlib/gpio.h"
 #include "driverlib/sysctl.h"
