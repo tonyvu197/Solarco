@@ -6,7 +6,6 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include <string.h>
-#include <assert.h>
 #include "utils/uartstdio.h"
 #include "inc/tm4c123gh6pm.h"
 #include "inc/hw_memmap.h"

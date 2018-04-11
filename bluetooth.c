@@ -14,7 +14,7 @@ void receiveBluetooth() {
     b.isReceived = UARTCharsAvail(UART1_BASE);
 
     if (b.isReceived) {
-        //b.received = UARTCharGet(UART0_BASE);
+        b.received = UARTCharGet(UART0_BASE);
         runMotor("16");
     }
 }

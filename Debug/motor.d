@@ -12,7 +12,6 @@ motor.obj: C:/Program\ Files\ (x86)/TI/ccsv7/tools/compiler/ti-cgt-arm_16.9.7.LT
 motor.obj: C:/Program\ Files\ (x86)/TI/ccsv7/tools/compiler/ti-cgt-arm_16.9.7.LTS/include/stdlib.h
 motor.obj: C:/Program\ Files\ (x86)/TI/ccsv7/tools/compiler/ti-cgt-arm_16.9.7.LTS/include/stdbool.h
 motor.obj: C:/Program\ Files\ (x86)/TI/ccsv7/tools/compiler/ti-cgt-arm_16.9.7.LTS/include/string.h
-motor.obj: C:/Program\ Files\ (x86)/TI/ccsv7/tools/compiler/ti-cgt-arm_16.9.7.LTS/include/assert.h
 motor.obj: C:/Program\ Files\ (x86)/TI/TivaWare/utils/uartstdio.h
 motor.obj: C:/Program\ Files\ (x86)/TI/ccsv7/tools/compiler/ti-cgt-arm_16.9.7.LTS/include/stdarg.h
 motor.obj: C:/Program\ Files\ (x86)/TI/TivaWare/inc/tm4c123gh6pm.h
@@ -49,7 +48,6 @@ C:/Program\ Files\ (x86)/TI/ccsv7/tools/compiler/ti-cgt-arm_16.9.7.LTS/include/_
 C:/Program\ Files\ (x86)/TI/ccsv7/tools/compiler/ti-cgt-arm_16.9.7.LTS/include/stdlib.h: 
 C:/Program\ Files\ (x86)/TI/ccsv7/tools/compiler/ti-cgt-arm_16.9.7.LTS/include/stdbool.h: 
 C:/Program\ Files\ (x86)/TI/ccsv7/tools/compiler/ti-cgt-arm_16.9.7.LTS/include/string.h: 
-C:/Program\ Files\ (x86)/TI/ccsv7/tools/compiler/ti-cgt-arm_16.9.7.LTS/include/assert.h: 
 C:/Program\ Files\ (x86)/TI/TivaWare/utils/uartstdio.h: 
 C:/Program\ Files\ (x86)/TI/ccsv7/tools/compiler/ti-cgt-arm_16.9.7.LTS/include/stdarg.h: 
 C:/Program\ Files\ (x86)/TI/TivaWare/inc/tm4c123gh6pm.h: 

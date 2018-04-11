@@ -34,9 +34,9 @@ void stepMotor(int s) {
 // Run motor with 2 wires setup
 //
 
-void runMotor(unsigned char *step) {
-    m.charStep = step;
-    m.intStep = atoi(m.charStep);
+void runMotor(unsigned char *angle) {
+    m.charStep = angle;
+    m.intStep = (atoi(m.charStep)) * (1024 / 360);
 
     while (m.intStep > 0) {
         MAP_SysCtlDelay(m.speed);

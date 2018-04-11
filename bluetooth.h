@@ -12,7 +12,7 @@
 #define UART1_PERIPH SYSCTL_PERIPH_UART1
 
 typedef struct {
-    unsigned int received;
+    int received;
     bool isReceived;
 } Bluetooth;
 

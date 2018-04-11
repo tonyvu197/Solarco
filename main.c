@@ -56,6 +56,7 @@ void password() {
         setCursorPositionLCD(5, 1);
         printLCD("Enter PIN:");
         setCursorPositionLCD(7, 2);
+        GPIOIntEnable(ROW_PORT_BASE, KEYPAD_ROWS);
 
         while (strlen(pass) < 6) {
             if (k.isPressed) {
@@ -66,12 +67,11 @@ void password() {
         }
 
         if (strcmp(solar.password, pass) != 0) {
-            GPIOIntDisable(ROW_PORT_BASE, KEYPAD_ROWS);
+            GPIOIntDisable(ROW_PORT_BASE, KEYPAD_ROWS); // Prevent keypad spamming
             setCursorPositionLCD(4, 3);
             printLCD("Wrong PIN!!!");
             delay_ms(1000);
             clearLCD();
-            GPIOIntEnable(ROW_PORT_BASE, KEYPAD_ROWS);
         }
         else unlock = true;
     }
@@ -91,8 +91,6 @@ void menu() {
     printLCD("4. About");
 
     while (1) {
-        //while (!k.isPressed);
-
         if (k.isPressed) {
             if (strcmp(k.keyPressed, "1") == 0) motorControl();
             else if (strcmp(k.keyPressed, "2") == 0) changePW();
@@ -148,13 +146,12 @@ void newPosition() {
     printLCD("*");
     setCursorPositionLCD(17, 3);
     printLCD("#");
-    printCharLCD(2);
-    printCharLCD(1);
+    printCharLCD(0);
+    printCharLCD(3);
 
     while (1) {
         setCursorPositionLCD(12, 0);
         readSensor();
-        //printLCD(s.sensorValue);
         setCursorPositionLCD(15 + i, 1);
         if (k.isPressed) {
             if (strcmp(k.keyPressed, "#") == 0) { runMotor(angle); newPosition(); }
@@ -191,16 +188,15 @@ void rotateManually() {
     while (1) {
         setCursorPositionLCD(12, 0);
         readSensor();
-        printLCD(s.sensorValue);
         if (k.isPressed) {
             if (strcmp(k.keyPressed, "6") == 0) {
                 m.direction = 1;
-                runMotor("16");
+                runMotor("10");
                 rotateManually();
             }
             else if (strcmp(k.keyPressed, "4") == 0) {
                 m.direction = 0;
-                runMotor("16");
+                runMotor("10");
                 rotateManually();
             }
             else if (strcmp(k.keyPressed, "*") == 0) motorControl();
@@ -392,12 +388,6 @@ void main() {
     SysCtlPeripheralEnable(SENSOR_PERIPH);
 
     //
-    // Enable processor interrupts
-    //
-
-    IntMasterEnable();
-
-    //
     // Initialize devices
     //
 
@@ -406,6 +396,12 @@ void main() {
     initMotor();
     initSensor();
     initBluetooth();
+
+    //
+    // Enable processor interrupts
+    //
+
+    IntMasterEnable();
 
 
     //

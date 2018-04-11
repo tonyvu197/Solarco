@@ -12,7 +12,6 @@ keypad.obj: C:/Program\ Files\ (x86)/TI/ccsv7/tools/compiler/ti-cgt-arm_16.9.7.L
 keypad.obj: C:/Program\ Files\ (x86)/TI/ccsv7/tools/compiler/ti-cgt-arm_16.9.7.LTS/include/stdlib.h
 keypad.obj: C:/Program\ Files\ (x86)/TI/ccsv7/tools/compiler/ti-cgt-arm_16.9.7.LTS/include/stdbool.h
 keypad.obj: C:/Program\ Files\ (x86)/TI/ccsv7/tools/compiler/ti-cgt-arm_16.9.7.LTS/include/string.h
-keypad.obj: C:/Program\ Files\ (x86)/TI/ccsv7/tools/compiler/ti-cgt-arm_16.9.7.LTS/include/assert.h
 keypad.obj: C:/Program\ Files\ (x86)/TI/TivaWare/utils/uartstdio.h
 keypad.obj: C:/Program\ Files\ (x86)/TI/ccsv7/tools/compiler/ti-cgt-arm_16.9.7.LTS/include/stdarg.h
 keypad.obj: C:/Program\ Files\ (x86)/TI/TivaWare/inc/tm4c123gh6pm.h
@@ -49,7 +48,6 @@ C:/Program\ Files\ (x86)/TI/ccsv7/tools/compiler/ti-cgt-arm_16.9.7.LTS/include/_
 C:/Program\ Files\ (x86)/TI/ccsv7/tools/compiler/ti-cgt-arm_16.9.7.LTS/include/stdlib.h: 
 C:/Program\ Files\ (x86)/TI/ccsv7/tools/compiler/ti-cgt-arm_16.9.7.LTS/include/stdbool.h: 
 C:/Program\ Files\ (x86)/TI/ccsv7/tools/compiler/ti-cgt-arm_16.9.7.LTS/include/string.h: 
-C:/Program\ Files\ (x86)/TI/ccsv7/tools/compiler/ti-cgt-arm_16.9.7.LTS/include/assert.h: 
 C:/Program\ Files\ (x86)/TI/TivaWare/utils/uartstdio.h: 
 C:/Program\ Files\ (x86)/TI/ccsv7/tools/compiler/ti-cgt-arm_16.9.7.LTS/include/stdarg.h: 
 C:/Program\ Files\ (x86)/TI/TivaWare/inc/tm4c123gh6pm.h: 

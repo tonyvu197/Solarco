@@ -3,6 +3,7 @@
 void readSensor() {
 
     uint32_t ulValue[1];
+    unsigned char string[100];
 
     //
     // Trigger the ADC conversion.
@@ -27,7 +28,9 @@ void readSensor() {
     //
 
     ADCSequenceDataGet(SENSOR_BASE, 3, ulValue);
-
+    ltoa(ulValue[0], string);
+    printLCD(string);
+    /*
     if (ulValue[0] < 512) {
         printCharLCD(0xFF);
         printCharLCD(7);
@@ -108,6 +111,7 @@ void readSensor() {
         printCharLCD(0xFF);
         printCharLCD(0xFF);
     }
+    */
 }
 
 
@@ -118,13 +122,12 @@ void initSensor() {
     // Consult the data sheet to see which functions are allocated per pin.
     // TODO: change this to select the port/pin you are using.
     //
-    //GPIOPinTypeGPIOInput(GPIO_PORTE_BASE, GPIO_PIN_3);
 
+    GPIOPinTypeGPIOInput(GPIO_PORTE_BASE, GPIO_PIN_3);
+    GPIOPadConfigSet(GPIO_PORTE_BASE, GPIO_PIN_3, GPIO_STRENGTH_2MA, GPIO_PIN_TYPE_STD_WPD);
     GPIOPinTypeADC(GPIO_PORTE_BASE, GPIO_PIN_3);
-
-    //ADCSequenceDisable(ADC0_BASE, 0);
-
     ADCSequenceConfigure(SENSOR_BASE, 3, ADC_TRIGGER_PROCESSOR, 0);
+    ADCSequenceDisable(ADC0_BASE, 3);
 
     //
     // Configure step 0 to 7 on sequence 0.  Sample the temperature sensor
