@@ -10,6 +10,8 @@
 #define COILS_PORT_BASE GPIO_PORTF_BASE // Control pins connect to port F
 #define MOTOR_PERIPH SYSCTL_PERIPH_GPIOF
 
+#define MOTOR_MAXSTEPS 1024 // Number of steps for 1 revolution of the motor
+
 typedef struct {
     int direction;              // 1 forward, 0 backward
     long double speed;          // Rotate speed of the motor
@@ -22,9 +24,9 @@ typedef struct {
 
 Motor m;
 
-void motorRPM(long double);
-void stepMotor(int);
-void runMotor(unsigned char *);
-void initMotor();
+extern void motorRPM(int);
+extern void stepMotor(int);
+extern void runMotor(unsigned char *);
+extern void initMotor();
 
 #endif /* LIB_MOTOR_H_ */

@@ -36,7 +36,7 @@
 #include "keypad.h"
 #include "motor.h"
 #include "sensor.h"
-#include "bluetooth.h"
+#include "UART.h"
 
 void delay_us(int n) {
     MAP_SysCtlDelay((SysCtlClockGet() / 3000000) * n);
@@ -173,7 +173,6 @@ void rotateManually() {
     setCursorPositionLCD(0, 0);
     printCharLCD(6);
     printLCD("Intensity: ");
-    //printLCD(Light Sensor Here);
     setCursorPositionLCD(0, 1);
     printCharLCD(0);
     printLCD("4");
@@ -208,7 +207,7 @@ void rotateManually() {
 void changeRPM() {
     k.isPressed = false;
     clearLCD();
-    unsigned char charSpeed[3] = '\0';
+    unsigned char charSpeed[3] = {'\0'};
     long double intSpeed;
 
     setCursorPositionLCD(0, 0);
@@ -248,7 +247,6 @@ void changePW() {
     password();
     k.isPressed = false;
     clearLCD();
-    //bool confirm = false;
 
     unsigned char pass[6] = {'\0'};
     setCursorPositionLCD(3, 0);
@@ -383,8 +381,8 @@ void main() {
     while(!SysCtlPeripheralReady(LCD_CMD_PERIPH));
     SysCtlPeripheralEnable(MOTOR_PERIPH);
     while(!SysCtlPeripheralReady(MOTOR_PERIPH));
-    SysCtlPeripheralEnable(BLT_PERIPH);
-    while(!SysCtlPeripheralReady(BLT_PERIPH));
+    SysCtlPeripheralEnable(UART1_PORT_PERIPH);
+    while(!SysCtlPeripheralReady(UART1_PORT_PERIPH));
     SysCtlPeripheralEnable(UART1_PERIPH);
     SysCtlPeripheralEnable(SENSOR_PERIPH);
 
@@ -396,7 +394,7 @@ void main() {
     initKeypad();
     initMotor();
     initSensor();
-    //initBluetooth();
+    initUART1();
 
     //
     // Enable processor interrupts
@@ -415,6 +413,7 @@ void main() {
     // Fun Time
     //
 
+    clearLCD();
     password();
     menu();
 }

@@ -9,6 +9,7 @@ CMD_SRCS += \
 ../tm4c123gh6pm.cmd 
 
 C_SRCS += \
+../UART.c \
 ../bluetooth.c \
 ../display.c \
 ../keypad.c \
@@ -19,6 +20,7 @@ C_SRCS += \
 C:/Program\ Files\ (x86)/TI/TivaWare/utils/uartstdio.c 
 
 C_DEPS += \
+./UART.d \
 ./bluetooth.d \
 ./display.d \
 ./keypad.d \
@@ -29,6 +31,7 @@ C_DEPS += \
 ./uartstdio.d 
 
 OBJS += \
+./UART.obj \
 ./bluetooth.obj \
 ./display.obj \
 ./keypad.obj \
@@ -39,6 +42,7 @@ OBJS += \
 ./uartstdio.obj 
 
 OBJS__QUOTED += \
+"UART.obj" \
 "bluetooth.obj" \
 "display.obj" \
 "keypad.obj" \
@@ -49,6 +53,7 @@ OBJS__QUOTED += \
 "uartstdio.obj" 
 
 C_DEPS__QUOTED += \
+"UART.d" \
 "bluetooth.d" \
 "display.d" \
 "keypad.d" \
@@ -59,6 +64,7 @@ C_DEPS__QUOTED += \
 "uartstdio.d" 
 
 C_SRCS__QUOTED += \
+"../UART.c" \
 "../bluetooth.c" \
 "../display.c" \
 "../keypad.c" \

@@ -5,6 +5,13 @@
 SHELL = cmd.exe
 
 # Each subdirectory must supply rules for building sources it contributes
+UART.obj: ../UART.c $(GEN_OPTS) | $(GEN_HDRS)
+	@echo 'Building file: "$<"'
+	@echo 'Invoking: ARM Compiler'
+	"C:/Program Files (x86)/TI/ccsv7/tools/compiler/ti-cgt-arm_16.9.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --opt_for_speed=0 --include_path="C:/Users/tony4/CCS Projects/Solarco" --include_path="C:/Program Files (x86)/TI/TivaWare" --include_path="C:/Program Files (x86)/TI/TivaWare/driverlib" --include_path="C:/Program Files (x86)/TI/ccsv7/tools/compiler/ti-cgt-arm_16.9.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --c99 --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="UART.d_raw" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: "$<"'
+	@echo ' '
+
 bluetooth.obj: ../bluetooth.c $(GEN_OPTS) | $(GEN_HDRS)
 	@echo 'Building file: "$<"'
 	@echo 'Invoking: ARM Compiler'

@@ -27,8 +27,8 @@ typedef struct {
 
 Key k;
 
-void readKeypad();
-void getKeypad(unsigned char *);
-void initKeypad();
+extern void readKeypad();
+extern void getKeypad(unsigned char *);
+extern void initKeypad();
 
 #endif /* LIB_KEYPAD_H_ */

@@ -41,7 +41,7 @@ main.obj: C:/Program\ Files\ (x86)/TI/TivaWare/driverlib/pin_map.h
 main.obj: ../keypad.h
 main.obj: ../motor.h
 main.obj: ../sensor.h
-main.obj: ../bluetooth.h
+main.obj: ../UART.h
 
 ../main.c: 
 ../display.h: 
@@ -84,4 +84,4 @@ C:/Program\ Files\ (x86)/TI/TivaWare/driverlib/pin_map.h:
 ../keypad.h: 
 ../motor.h: 
 ../sensor.h: 
-../bluetooth.h: 
+../UART.h: 

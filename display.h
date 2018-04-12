@@ -17,19 +17,19 @@
 #define LCD_DATA_PERIPH SYSCTL_PERIPH_GPIOD
 #define LCD_CMD_PERIPH SYSCTL_PERIPH_GPIOE
 
-void pulseLCD();
-void sendByte(unsigned char, bool);
-void setCursorPositionLCD(char, char);
-void clearLCD();
-void printLCD(unsigned char *);
-void setBlockCursorLCD();
-void setLineCursorLCD();
-void cursorOnLCD();
-void cursorOffLCD();
-void displayOffLCD();
-void displayOnLCD();
-void homeLCD();
-void createChar();
-void initLCD();
+extern void pulseLCD();
+extern void sendByte(unsigned char, bool);
+extern void setCursorPositionLCD(char, char);
+extern void clearLCD();
+extern void printLCD(unsigned char *);
+extern void setBlockCursorLCD();
+extern void setLineCursorLCD();
+extern void cursorOnLCD();
+extern void cursorOffLCD();
+extern void displayOffLCD();
+extern void displayOnLCD();
+extern void homeLCD();
+extern void createChar();
+extern void initLCD();
 
 #endif /* LIB_DISPLAY_H_ */

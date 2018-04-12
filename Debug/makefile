@@ -10,6 +10,7 @@ GEN_OPTS__FLAG :=
 GEN_CMDS__FLAG := 
 
 ORDERED_OBJS += \
+"./UART.obj" \
 "./bluetooth.obj" \
 "./display.obj" \
 "./keypad.obj" \
@@ -162,8 +163,8 @@ Solarco.hex: $(EXE_OUTPUTS)
 # Other Targets
 clean:
 	-$(RM) $(BIN_OUTPUTS__QUOTED)$(EXE_OUTPUTS__QUOTED)
-	-$(RM) "bluetooth.obj" "display.obj" "keypad.obj" "main.obj" "motor.obj" "sensor.obj" "tm4c123gh6pm_startup_ccs.obj" "uartstdio.obj" 
-	-$(RM) "bluetooth.d" "display.d" "keypad.d" "main.d" "motor.d" "sensor.d" "tm4c123gh6pm_startup_ccs.d" "uartstdio.d" 
+	-$(RM) "UART.obj" "bluetooth.obj" "display.obj" "keypad.obj" "main.obj" "motor.obj" "sensor.obj" "tm4c123gh6pm_startup_ccs.obj" "uartstdio.obj" 
+	-$(RM) "UART.d" "bluetooth.d" "display.d" "keypad.d" "main.d" "motor.d" "sensor.d" "tm4c123gh6pm_startup_ccs.d" "uartstdio.d" 
 	-@echo 'Finished clean'
 	-@echo ' '
 

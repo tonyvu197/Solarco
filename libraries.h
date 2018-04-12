@@ -38,4 +38,16 @@ typedef struct {
 
 Solarco solar;
 
+extern void delay_us(int);
+extern void delay_ms(int);
+extern void password();
+extern void menu();
+extern void motorControl();
+extern void newPosition();
+extern void rotateManually();
+extern void changePW();
+extern void lockDevice();
+extern void companyInfo();
+extern void teamRole();
+
 #endif /* LIB_LIBRARIES_H_ */

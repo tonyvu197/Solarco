@@ -5,7 +5,7 @@
 // Because SysCtlDelay() take 3 cycles to complete so F_CPU /= 3
 //
 
-void motorRPM(long double speed) {
+void motorRPM(int speed) {
     m.speed = 20 * SysCtlClockGet() / m.motorMaxStep / speed;
 }
 
@@ -64,7 +64,7 @@ void initMotor() {
     m.stepNum = 0;
     m.charStep = "0";
     m.intStep = 0;
-    m.speed = 52083;        // 30 RPM
     m.charSpeed = "30";
-    m.motorMaxStep = 1024;  // 1024 steps for 1 revolution
+    m.motorMaxStep = MOTOR_MAXSTEPS;
+    motorRPM(30);
 }
