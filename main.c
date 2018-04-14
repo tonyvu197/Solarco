@@ -30,6 +30,8 @@
 
  * Light Sensor Connection:
  * PE3 -> Sensor Ouput
+ *
+ * NOTE: I'm not responsible if my code brick your board!
 ********************/
 
 #include "display.h"
