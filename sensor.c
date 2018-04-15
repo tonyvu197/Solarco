@@ -2,7 +2,7 @@
 
 void readSensor() {
 
-    uint32_t ulValue[1];
+    unsigned long ulValue[1];
 
     //
     // Trigger the ADC conversion.

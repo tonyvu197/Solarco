@@ -36,7 +36,7 @@ void stepMotor(int s) {
 
 void runMotor(unsigned char *angle) {
     m.charStep = angle;
-    m.intStep = (atoi(m.charStep)) * (1024 / 360);
+    m.intStep = (atoi(m.charStep) * 1024) / 360;
 
     while (m.intStep > 0) {
         MAP_SysCtlDelay(m.speed);

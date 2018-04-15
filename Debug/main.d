@@ -1,7 +1,6 @@
 # FIXED
 
 main.obj: ../main.c
-main.obj: ../display.h
 main.obj: ../libraries.h
 main.obj: C:/Program\ Files\ (x86)/TI/ccsv7/tools/compiler/ti-cgt-arm_16.9.7.LTS/include/stdio.h
 main.obj: C:/Program\ Files\ (x86)/TI/ccsv7/tools/compiler/ti-cgt-arm_16.9.7.LTS/include/linkage.h
@@ -38,13 +37,14 @@ main.obj: C:/Program\ Files\ (x86)/TI/TivaWare/driverlib/timer.h
 main.obj: C:/Program\ Files\ (x86)/TI/TivaWare/driverlib/udma.h
 main.obj: C:/Program\ Files\ (x86)/TI/TivaWare/driverlib/pwm.h
 main.obj: C:/Program\ Files\ (x86)/TI/TivaWare/driverlib/pin_map.h
+main.obj: ../display.h
+main.obj: ../libraries.h
 main.obj: ../keypad.h
 main.obj: ../motor.h
 main.obj: ../sensor.h
 main.obj: ../UART.h
 
 ../main.c: 
-../display.h: 
 ../libraries.h: 
 C:/Program\ Files\ (x86)/TI/ccsv7/tools/compiler/ti-cgt-arm_16.9.7.LTS/include/stdio.h: 
 C:/Program\ Files\ (x86)/TI/ccsv7/tools/compiler/ti-cgt-arm_16.9.7.LTS/include/linkage.h: 
@@ -81,6 +81,8 @@ C:/Program\ Files\ (x86)/TI/TivaWare/driverlib/timer.h:
 C:/Program\ Files\ (x86)/TI/TivaWare/driverlib/udma.h: 
 C:/Program\ Files\ (x86)/TI/TivaWare/driverlib/pwm.h: 
 C:/Program\ Files\ (x86)/TI/TivaWare/driverlib/pin_map.h: 
+../display.h: 
+../libraries.h: 
 ../keypad.h: 
 ../motor.h: 
 ../sensor.h: 

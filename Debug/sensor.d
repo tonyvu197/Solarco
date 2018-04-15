@@ -38,6 +38,12 @@ sensor.obj: C:/Program\ Files\ (x86)/TI/TivaWare/driverlib/timer.h
 sensor.obj: C:/Program\ Files\ (x86)/TI/TivaWare/driverlib/udma.h
 sensor.obj: C:/Program\ Files\ (x86)/TI/TivaWare/driverlib/pwm.h
 sensor.obj: C:/Program\ Files\ (x86)/TI/TivaWare/driverlib/pin_map.h
+sensor.obj: ../display.h
+sensor.obj: ../libraries.h
+sensor.obj: ../keypad.h
+sensor.obj: ../motor.h
+sensor.obj: ../sensor.h
+sensor.obj: ../UART.h
 
 ../sensor.c: 
 ../sensor.h: 
@@ -77,3 +83,9 @@ C:/Program\ Files\ (x86)/TI/TivaWare/driverlib/timer.h:
 C:/Program\ Files\ (x86)/TI/TivaWare/driverlib/udma.h: 
 C:/Program\ Files\ (x86)/TI/TivaWare/driverlib/pwm.h: 
 C:/Program\ Files\ (x86)/TI/TivaWare/driverlib/pin_map.h: 
+../display.h: 
+../libraries.h: 
+../keypad.h: 
+../motor.h: 
+../sensor.h: 
+../UART.h: 

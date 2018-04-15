@@ -2,7 +2,6 @@
 
 void UART1receive() {
     unsigned long status;
-    long l_character[3];
     unsigned char uc_character[3];
     int i = 0;
 
@@ -23,16 +22,20 @@ void UART1receive() {
     UARTIntClear(UART1_BASE, status);
 
     //
-    // Run the motor according to the received character
+    // Received characters
     //
 
     while (UARTCharsAvail(UART1_BASE)) {
-        l_character[i] = UARTCharGetNonBlocking(UART1_BASE);
-        ltoa(l_character[i], uc_character[i]);
+        uc_character[i] = UARTCharGetNonBlocking(UART1_BASE);
         i++;
-        //UARTCharPutNonBlocking(UART1_BASE, UARTCharGetNonBlocking(UART1_BASE));
+        uc_character[i] = '\0';
     }
 
+
+    //
+    // Run the motor
+    //
+    printLCD(uc_character);
     runMotor(uc_character);
     menu();
 }
@@ -56,6 +59,12 @@ void UART1send(const unsigned char *string) {
 void initUART1() {
 
     //
+    // Disable interrupts
+    //
+
+    disableUART1();
+
+    //
     // Configure PB0 and PB1 as UART
     // 115200 baud, 8-N-1 operation
     //
@@ -69,7 +78,8 @@ void initUART1() {
     // Enable interrupts
     //
 
-    UARTIntEnable(UART1_BASE, UART_INT_RX | UART_INT_RT);
+    UARTIntRegister(UART1_BASE, UART1receive);
+    UARTIntEnable(UART1_BASE, UART_INT_RX | UART_INT_RT | UART_INT_TX);
     IntEnable(INT_UART1);
 
     //
@@ -77,4 +87,10 @@ void initUART1() {
     //
 
     UARTEnable(UART1_BASE);
+}
+
+void disableUART1() {
+    IntDisable(INT_UART1);
+    UARTIntDisable(UART1_BASE, UART_INT_RX | UART_INT_RT | UART_INT_TX);
+    UARTDisable(UART1_BASE);
 }

@@ -38,6 +38,12 @@ keypad.obj: C:/Program\ Files\ (x86)/TI/TivaWare/driverlib/timer.h
 keypad.obj: C:/Program\ Files\ (x86)/TI/TivaWare/driverlib/udma.h
 keypad.obj: C:/Program\ Files\ (x86)/TI/TivaWare/driverlib/pwm.h
 keypad.obj: C:/Program\ Files\ (x86)/TI/TivaWare/driverlib/pin_map.h
+keypad.obj: ../display.h
+keypad.obj: ../libraries.h
+keypad.obj: ../keypad.h
+keypad.obj: ../motor.h
+keypad.obj: ../sensor.h
+keypad.obj: ../UART.h
 
 ../keypad.c: 
 ../keypad.h: 
@@ -77,3 +83,9 @@ C:/Program\ Files\ (x86)/TI/TivaWare/driverlib/timer.h:
 C:/Program\ Files\ (x86)/TI/TivaWare/driverlib/udma.h: 
 C:/Program\ Files\ (x86)/TI/TivaWare/driverlib/pwm.h: 
 C:/Program\ Files\ (x86)/TI/TivaWare/driverlib/pin_map.h: 
+../display.h: 
+../libraries.h: 
+../keypad.h: 
+../motor.h: 
+../sensor.h: 
+../UART.h: 

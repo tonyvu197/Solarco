@@ -32,6 +32,12 @@
 #include "driverlib/pwm.h"
 #include "driverlib/pin_map.h"
 
+#include "display.h"
+#include "keypad.h"
+#include "motor.h"
+#include "sensor.h"
+#include "UART.h"
+
 typedef struct {
     unsigned char password[6];
 } Solarco;
@@ -46,6 +52,7 @@ extern void motorControl();
 extern void newPosition();
 extern void rotateManually();
 extern void changePW();
+extern void changeRPM();
 extern void lockDevice();
 extern void companyInfo();
 extern void teamRole();

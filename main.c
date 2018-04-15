@@ -34,18 +34,14 @@
  * NOTE: I'm not responsible if my code brick your board!
 ********************/
 
-#include "display.h"
-#include "keypad.h"
-#include "motor.h"
-#include "sensor.h"
-#include "UART.h"
+#include "libraries.h"
 
 void delay_us(int n) {
-    MAP_SysCtlDelay((SysCtlClockGet() / 3000000) * n);
+    SysCtlDelay((SysCtlClockGet() / 3000000) * n);
 }
 
 void delay_ms(int n) {
-    MAP_SysCtlDelay((SysCtlClockGet() / 3000) * n);
+    SysCtlDelay((SysCtlClockGet() / 3000) * n);
 }
 
 void password() {
@@ -58,7 +54,6 @@ void password() {
         setCursorPositionLCD(5, 1);
         printLCD("Enter PIN:");
         setCursorPositionLCD(7, 2);
-        GPIOIntEnable(ROW_PORT_BASE, KEYPAD_ROWS);
 
         while (strlen(pass) < 6) {
             if (k.isPressed) {
@@ -74,6 +69,7 @@ void password() {
             printLCD("Wrong PIN!!!");
             delay_ms(1000);
             clearLCD();
+            GPIOIntEnable(ROW_PORT_BASE, KEYPAD_ROWS);
         }
         else unlock = true;
     }
@@ -135,11 +131,11 @@ void newPosition() {
 
     unsigned char angle[3] = {'\0'};
     int i = 0;
+    m.direction = 1;
 
     setCursorPositionLCD(0, 0);
     printCharLCD(6);
     printLCD("Intensity: ");
-    //printLCD(Light Sensor Here);
     setCursorPositionLCD(0, 1);
     printLCD("Angle to move: ");
     setCursorPositionLCD(0, 3);
@@ -187,18 +183,19 @@ void rotateManually() {
     printLCD("*");
 
     while (1) {
+        k.isPressed = false;
         setCursorPositionLCD(12, 0);
         readSensor();
         if (k.isPressed) {
             if (strcmp(k.keyPressed, "6") == 0) {
                 m.direction = 1;
                 runMotor("10");
-                rotateManually();
+                //rotateManually();
             }
             else if (strcmp(k.keyPressed, "4") == 0) {
                 m.direction = 0;
                 runMotor("10");
-                rotateManually();
+                //rotateManually();
             }
             else if (strcmp(k.keyPressed, "*") == 0) motorControl();
             else k.isPressed = false;
