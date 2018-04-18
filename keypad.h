@@ -21,11 +21,11 @@
 
 typedef struct {
     unsigned char *keyPressed;
-    volatile int row, col;
+    int row, col;
     bool isPressed;
 } Key;
 
-Key k;
+volatile Key k;
 
 extern void readKeypad();
 extern void getKeypad(unsigned char *);

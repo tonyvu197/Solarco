@@ -10,8 +10,18 @@
 #define UART1_PORT_PERIPH SYSCTL_PERIPH_GPIOB
 #define UART1_PERIPH SYSCTL_PERIPH_UART1
 
+typedef struct {
+    bool run;
+    unsigned char recv[3];
+} UART1;
+
+volatile UART1 u;
+
 extern void initUART1();
 extern void UART1receive();
+extern void disableUART1();
+extern void enableUART1();
+extern void blueMotor();
 extern void UART1send(const unsigned char *);
 
 #endif /* LIB_SRL_H_ */

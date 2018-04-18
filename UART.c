@@ -1,13 +1,28 @@
 #include "UART.h"
 
+//
+// Check flag to run the motor
+//
+
+void blueMotor() {
+    disableUART1();
+    clearLCD();
+    setCursorPositionLCD(0, 0);
+    printLCD("Received: ");
+    printLCD(u.recv);
+    runMotor(u.recv);
+    u.run = false;
+    enableUART1();
+}
+
+//
+// RX interrupt
+//
+
 void UART1receive() {
     unsigned long status;
     unsigned char uc_character[3];
     int i = 0;
-
-    clearLCD();
-    setCursorPositionLCD(0, 0);
-    printLCD("Received: ");
 
     //
     // Get the interrrupt status.
@@ -31,13 +46,12 @@ void UART1receive() {
         uc_character[i] = '\0';
     }
 
+    //
+    // Set flag to run the motor
+    //
 
-    //
-    // Run the motor
-    //
-    printLCD(uc_character);
-    runMotor(uc_character);
-    menu();
+    u.run = true;
+    strcpy(u.recv, uc_character);
 }
 
 void UART1send(const unsigned char *string) {
@@ -47,13 +61,20 @@ void UART1send(const unsigned char *string) {
     //
 
     while(string != 0x00) {
-
-        //
-        // Write the next character to the UART.
-        //
-
         UARTCharPutNonBlocking(UART1_BASE, *string++);
     }
+}
+
+void disableUART1() {
+    IntDisable(INT_UART1);
+    UARTIntDisable(UART1_BASE, UART_INT_RX | UART_INT_RT);
+    UARTDisable(UART1_BASE);
+}
+
+void enableUART1() {
+    IntEnable(INT_UART1);
+    UARTIntEnable(UART1_BASE, UART_INT_RX | UART_INT_RT);
+    UARTEnable(UART1_BASE);
 }
 
 void initUART1() {
@@ -75,22 +96,11 @@ void initUART1() {
     UARTConfigSetExpClk(UART1_BASE, SysCtlClockGet(), 115200, UART_CONFIG_WLEN_8 | UART_CONFIG_STOP_ONE | UART_CONFIG_PAR_NONE);
 
     //
-    // Enable interrupts
+    // Enable interrupts and UART1
     //
 
     UARTIntRegister(UART1_BASE, UART1receive);
-    UARTIntEnable(UART1_BASE, UART_INT_RX | UART_INT_RT | UART_INT_TX);
+    UARTIntEnable(UART1_BASE, UART_INT_RX | UART_INT_RT);
     IntEnable(INT_UART1);
-
-    //
-    // Enable the UART operation.
-    //
-
     UARTEnable(UART1_BASE);
-}
-
-void disableUART1() {
-    IntDisable(INT_UART1);
-    UARTIntDisable(UART1_BASE, UART_INT_RX | UART_INT_RT | UART_INT_TX);
-    UARTDisable(UART1_BASE);
 }

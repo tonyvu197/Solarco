@@ -21,8 +21,6 @@
  * Bluetooth Connection:
  * PB0 -> RX
  * PB1 -> TX
- * PB4 -> EN
- * PB5 -> ST
 
  * Motor Connection:
  * PF2 -> Coil A
@@ -58,7 +56,8 @@ void password() {
         while (strlen(pass) < 6) {
             if (k.isPressed) {
                 strcat(pass, k.keyPressed);
-                printLCD("*");
+                printLCD(k.keyPressed);
+                //printLCD("*");
                 k.isPressed = false;
             }
         }
@@ -89,6 +88,10 @@ void menu() {
     printLCD("4. About");
 
     while (1) {
+        if (u.run) {
+            blueMotor();
+            menu();
+        }
         if (k.isPressed) {
             if (strcmp(k.keyPressed, "1") == 0) motorControl();
             else if (strcmp(k.keyPressed, "2") == 0) changePW();
@@ -115,6 +118,10 @@ void motorControl() {
     printLCD("*");
 
     while (1) {
+        if (u.run) {
+            blueMotor();
+            motorControl();
+        }
         if (k.isPressed) {
             if (strcmp(k.keyPressed, "1") == 0) newPosition();
             else if (strcmp(k.keyPressed, "2") == 0) rotateManually();
@@ -148,6 +155,10 @@ void newPosition() {
     printCharLCD(3);
 
     while (1) {
+        if (u.run) {
+            blueMotor();
+            newPosition();
+        }
         setCursorPositionLCD(12, 0);
         readSensor();
         setCursorPositionLCD(15 + i, 1);
@@ -183,6 +194,10 @@ void rotateManually() {
     printLCD("*");
 
     while (1) {
+        if (u.run) {
+            blueMotor();
+            rotateManually();
+        }
         k.isPressed = false;
         setCursorPositionLCD(12, 0);
         readSensor();
@@ -225,6 +240,10 @@ void changeRPM() {
     setCursorPositionLCD(9, 0);
 
     while (1) {
+        if (u.run) {
+            blueMotor();
+            changeRPM();
+        }
         if (k.isPressed) {
             if (strcmp(k.keyPressed, "#") == 0) {
                 m.charSpeed = charSpeed;
@@ -316,6 +335,10 @@ void companyInfo() {
     printCharLCD(1);
 
     while (1) {
+        if (u.run) {
+            blueMotor();
+            companyInfo();
+        }
         if (k.isPressed) {
             if (strcmp(k.keyPressed, "*") == 0) menu();
             else if (strcmp(k.keyPressed, "#") == 0) teamRole();
@@ -341,6 +364,10 @@ void teamRole() {
     printLCD("*");
 
     while (1) {
+        if (u.run) {
+            blueMotor();
+            teamRole();
+        }
         if (k.isPressed) {
             if (strcmp(k.keyPressed, "*") == 0) companyInfo();
             else k.isPressed = false;
@@ -350,6 +377,12 @@ void teamRole() {
 
 
 void main() {
+
+    //
+    // Disable processor interrupts
+    //
+
+    IntMasterDisable();
 
     //
     // Enable lazy stacking for interrupt handlers.  This allows floating-point
@@ -401,15 +434,15 @@ void main() {
 
     IntMasterEnable();
 
-
     //
     // Initial password
     //
 
-    strcpy(solar.password, "123456");
+    strcpy(solar.password,"123456");
+    //solar.password = "123456";
 
     //
-    // Fun Time
+    // Begin
     //
 
     clearLCD();
